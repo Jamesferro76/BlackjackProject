@@ -35,7 +35,6 @@ public class Deck {
 
 	public Card dealCard() {
 		Card card = deckOfCards.remove(0);
-		System.out.println(card);
 		return card;
 	}
 
