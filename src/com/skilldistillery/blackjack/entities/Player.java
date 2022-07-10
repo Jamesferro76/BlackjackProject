@@ -27,7 +27,7 @@ public class Player {
 
 	@Override
 	public String toString() {
-		return "Player [hand=" + this.getHand() + " sum: "+ this.getHand().getHandValue() + "]";
+		return "Player " + this.getHand();
 	}
 
 }

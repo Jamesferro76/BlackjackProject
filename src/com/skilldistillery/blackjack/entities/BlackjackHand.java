@@ -33,7 +33,7 @@ public class BlackjackHand extends Hand{
 
 	@Override
 	public String toString() {
-		return "[Losing hand=" + hand + " sum: "+ getHandValue() + "]";
+		return "[Hand=" + hand + " sum: "+ getHandValue() + "]";
 	}
 	
 

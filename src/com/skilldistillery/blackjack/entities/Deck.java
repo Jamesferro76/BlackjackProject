@@ -29,7 +29,6 @@ public class Deck {
 	}
 
 	public int checkDeckSize() {
-//		System.out.println("Number of remaining cards: "+ deckOfCards.size());
 		return deckOfCards.size();
 	}
 

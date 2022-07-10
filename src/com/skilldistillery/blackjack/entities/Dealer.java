@@ -35,7 +35,7 @@ public class Dealer extends Player{
 			deck.shuffle();
 			System.out.println("Player card 1: " + dealToPlayer(deck.dealCard(), player));
 			dealToPlayer(deck.dealCard(), this);
-			System.out.println("Dealer card is face down.");
+			System.out.println("Dealer card 1: face down.");
 			System.out.println("Player card 2: " + dealToPlayer(deck.dealCard(), player));
 			System.out.println("Dealer card 2: " + dealToPlayer(deck.dealCard(), this));
 		}
@@ -53,7 +53,7 @@ public class Dealer extends Player{
 		}
 		
 		public String toString() {
-			return "Dealer [hand=" + this.getHand() + " sum: "+ this.getHand().getHandValue() + "]";
+			return "Dealer " + this.getHand();
 		}
 
 }

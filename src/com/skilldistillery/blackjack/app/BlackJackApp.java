@@ -46,7 +46,7 @@ public class BlackJackApp {
 
 	private void displayVisibleHands() {
 		System.out.println("---------------------------------------------------------------");
-		System.out.println(player.getHand());
+		System.out.println(player);
 		System.out.println("---------------------------------------------------------------");
 	}
 
@@ -59,7 +59,7 @@ public class BlackJackApp {
 
 	private void verdict() {
 		System.out.println("*****************************************");
-		if (player.getHand().getHandValue() >= dealer.getHand().getHandValue()) {
+		if (player.getHand().getHandValue() > dealer.getHand().getHandValue()) {
 			System.out.println("The dealer has " + dealer.getHand().getHandValue() + " and must stay.");
 			System.out.println("You win! Great Job!");
 		} else if (player.getHand().getHandValue() < dealer.getHand().getHandValue()) {
