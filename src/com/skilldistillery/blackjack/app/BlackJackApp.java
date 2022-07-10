@@ -14,11 +14,13 @@ public class BlackJackApp {
 
 	public static void main(String[] args) {
 		BlackJackApp app = new BlackJackApp();
+		
 		app.run();
 	}
 
 	private void run() {
 		Scanner sc = new Scanner(System.in);
+		do {
 		dealer.dealerSetUp(player);
 
 		// In case you win or lose from the first draw.
@@ -42,6 +44,7 @@ public class BlackJackApp {
 				}
 			}
 		}
+		}while(playAgain(sc));
 	}
 
 	private void displayVisibleHands() {
@@ -80,19 +83,15 @@ public class BlackJackApp {
 			System.out.println("Would you like to Hit or Stay?");
 			String userInput = sc.nextLine();
 
-			switch (userInput) {
-			case "hit":
-			case "Hit":
+			switch (userInput.toUpperCase()) {
+			case "HIT":
 			case "H":
-			case "h":
 				errorTrigger = false;
 				System.out.println(dealer.dealToPlayer(player));
 				break;
 
-			case "Stay":
-			case "stay":
+			case "STAY":
 			case "S":
-			case "s":
 				System.out.println("You decided to stay");
 				trigger = false;
 				errorTrigger = false;
@@ -128,4 +127,33 @@ public class BlackJackApp {
 	}
 		return gameOver;
 }
+	
+	public boolean playAgain(Scanner sc) {
+		boolean choice= false;
+		boolean unread= true;
+		
+		while(unread) {
+			unread=false;
+		System.out.println("Would you like to play again?");
+		String userInput= sc.nextLine();
+		
+		switch(userInput.toUpperCase()) {
+		case "YES":
+		case "Y":
+			choice=true;
+			player.getHand().clear();
+			dealer.restart();
+			break;
+		case "NO":
+		case "N":
+			System.out.println("Thanks for playing! Goodbye!");
+			break;
+		default:
+			System.out.println("That was not a readable response. Try again.");
+			unread=true;
+			break;
+		}
+		}
+		return choice;
+	}
 }

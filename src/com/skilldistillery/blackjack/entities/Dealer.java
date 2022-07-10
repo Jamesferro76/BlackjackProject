@@ -13,6 +13,7 @@ public class Dealer extends Player{
 		public boolean playerDecision() {
 			
 			if (this.getHand().getHandValue()< 17) {
+				System.out.println("The dealer hit");
 				dealToPlayer(deck.dealCard(), this);
 				
 			} else if (this.getHand().getHandValue()>= 17 && this.getHand().getHandValue() <= 21) {
@@ -54,6 +55,13 @@ public class Dealer extends Player{
 		
 		public String toString() {
 			return "Dealer " + this.getHand();
+		}
+		
+		public void restart() {
+			this.getHand().clear();
+			deck=new Deck();
+			System.out.println("Reshuffling the deck");
+			System.out.println();
 		}
 
 }
