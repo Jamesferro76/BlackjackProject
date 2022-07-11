@@ -45,6 +45,7 @@ public class BlackJackApp {
 			}
 		}
 		}while(playAgain(sc));
+		sc.close();
 	}
 
 	private void displayVisibleHands() {

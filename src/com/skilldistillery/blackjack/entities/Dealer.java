@@ -15,6 +15,7 @@ public class Dealer extends Player{
 			if (this.getHand().getHandValue()< 17) {
 				System.out.println("The dealer hit");
 				dealToPlayer(deck.dealCard(), this);
+				dealerTrigger=true;
 				
 			} else if (this.getHand().getHandValue()>= 17 && this.getHand().getHandValue() <= 21) {
 				System.out.println("The dealer stayed.");
